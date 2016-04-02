@@ -6,6 +6,9 @@ var React = require('react-native');
 var TouchID = require('react-native-touch-id');
 var wifi = require('react-native-wifi-checker');
 
+var BlueTooth = require('./bluetooth');
+var CameraClass = require('./Camera');
+
 var {DeviceEventEmitter} = React;
 
 require('react-native-bluetooth-state');
@@ -26,6 +29,7 @@ var {
   AlertIOS, // Thanks Kent!
   VibrationIOS,
   Dimensions,
+  NavigatorIOS,
   Image,
   PixelRatio,
   DeviceEventEmitter,
@@ -85,10 +89,31 @@ class GPSVibrateAlert extends Component {
             onPress={this.pickImage}>
             <Text style={styles.buttonText}>Image Picker</Text>
           </TouchableHighlight>
+          <TouchableHighlight style={styles.button}
+            onPress={this.navToBluetooth.bind(this)}>
+            <Text style={styles.buttonText}>Bluetooth</Text>
+          </TouchableHighlight>
+          <TouchableHighlight style={styles.button}
+            onPress={this.navToCamera.bind(this)}>
+            <Text style={styles.buttonText}>Camera</Text>
+          </TouchableHighlight>
       </View>
     );
   }
 
+  navToCamera(){
+    this.props.navigator.push({
+      title: 'Camera',
+      component: CameraClass
+    })
+  }
+
+  navToBluetooth(){
+    this.props.navigator.push({
+      title: 'Bluetooth',
+      component: BlueTooth
+    })
+  }
   vibrate(){
     VibrationIOS.vibrate();
   }
