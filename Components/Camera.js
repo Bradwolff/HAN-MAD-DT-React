@@ -62,14 +62,13 @@ var styles = StyleSheet.create({
     buttonBar: {
         flexDirection: "row",
         position: "absolute",
-        bottom: 25,
+        bottom: 75,
         right: 0,
         left: 0,
         justifyContent: "center"
     },
     button: {
         padding: 10,
-        color: "#FFFFFF",
         borderWidth: 1,
         borderColor: "#FFFFFF",
         margin: 5

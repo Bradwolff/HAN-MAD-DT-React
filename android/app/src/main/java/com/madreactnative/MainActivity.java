@@ -1,6 +1,7 @@
 package com.madreactnative;
 
 import com.facebook.react.ReactActivity;
+import com.AirMaps.AirPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.rayglaeske.react.wifi.WifiCheckerPackage;
 import com.lwansbrough.ReactCamera.ReactCamera;
@@ -38,6 +39,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+            new AirPackage(),
             new ImagePickerPackage(),
             new WifiCheckerPackage(),
             new ReactCamera()

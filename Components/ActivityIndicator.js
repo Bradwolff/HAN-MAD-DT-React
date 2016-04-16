@@ -65,10 +65,10 @@ exports.examples = [
       return (
         <View>
           <ActivityIndicatorIOS
-            style={[styles.centering, {height: 40}]}
+            style={[styles.centering, {height: 100}]}
           />
           <ActivityIndicatorIOS
-            style={[styles.centering, {backgroundColor: '#eeeeee', height: 40}]}
+            style={[styles.centering, {backgroundColor: '#eeeeee', height: 100}]}
           />
         </View>
       );
@@ -136,6 +136,7 @@ var styles = StyleSheet.create({
   centering: {
     alignItems: 'center',
     justifyContent: 'center',
+    flex: 1,
   },
   gray: {
     backgroundColor: '#cccccc',
